@@ -31,12 +31,12 @@ String.fromCharCode(97); // a
 // endsWith: Retorna true se a String termina com a String passada por parâmetro
 "Earlang".endsWith("langs"); // true
 
-// localeCompare: Retorna -1 se a String passada por parâmentro for maior,  se for igual e 1 se for menor - muito importante se eu for ordenar caracteres ou palavras
-"C++".localeCompare("Rubby"); // -1
-"a".localeCompare("b"); // -1
-"a".localeCompare("a"); // 0
-"b".localeCompare("a"); // 1
-"Python".localeCompare("Java"); // 1
+// localeCompare: Retorna -1 se a String passada por parâmentro for maior,  se for igual é 0 se for menor -1 => muito importante se eu for ordenar caracteres ou pesquisar palavras
+"C++".localeCompare("Rubby"); // -1   C < R
+"a".localeCompare("b"); // -1  a < b
+"a".localeCompare("a"); // 0   a == a
+"b".localeCompare("a"); // 1   b > a
+"Python".localeCompare("Java"); // 1 p < J
 
 "a" < "b"; // true
 "á" < "b"; // false
@@ -48,7 +48,7 @@ String.fromCharCode(97); // a
 
 // match: Retornar partes da String com base na RegExp passada por parâmentro
 "C++".match(/\+/g); // ['+', '+']
-"C++".match(/\+/); // ['+', index: 1, input:'C++']
+"C++".match(/\+/); // [ '+', index: 1, input: 'C++', groups: undefined ]
 
 // search: Retorna a primeira posição encontrada com base na RegExp passada por parâmentro similar ao indexOf
 "Java".search(/a/); // 1
@@ -79,12 +79,13 @@ String.fromCharCode(97); // a
 // padStart: Completa a String com caracteres no inicio
 (8).toString(2).padStart(32, 0); // '00000000000000000000000000001000'
 "Script".padStart(10, "Java"); // 'JavaScript'
+"Script".padStart(9, "Java"); // 'JavScript'
 
 // padEnd: Completa a String com caracteres no fim
 "C".padEnd(3, "+"); // 'C++'
 
 // repeat: Repete um caractere
-'C'.concat("+".repeat(2)) // 'C++'
+"C".concat("+".repeat(2)); // 'C++'
 
 // trim: Elimina espacos em branco no inicio e no fim
 " Self ".trim(); // 'Self'
