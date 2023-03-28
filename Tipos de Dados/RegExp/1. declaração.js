@@ -73,7 +73,8 @@ console.log(result.input); // mary@hotmail.com
 const query =
   "create table author (id number, name string, age number, city string, state string, country string)";
 
-const regexp = /create table (\w+) \(((\s?\w+ \w+,?)+)\)/;
+//const regexp = /create table (\w+) \(((\s?\w+ \w+,?)+)\)/; // Minha maneira
+const regexp = /create table (\w+) \((.+)\)/; // Mais simples
 const resultado = regexp.exec(query);
 //console.log(resultado)
 // Extraia o nome da tabela e armazene em uma variável chamada "tableName".
